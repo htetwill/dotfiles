@@ -1,0 +1,28 @@
+# THIS IS THE PANE LAYOUT CREATED
+# pane numbers are relative to the end of the actions
+#  _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+# | pane 0        | pane 1         |
+# |               |                |
+# |               |- - - - - - - - |
+# |               | pane 2         |
+# |               |                |
+# |               |- - - - - - - - |
+# |               | pane 3         |
+# |               |                |
+# |               |- - - - - - - - |
+# |               | pane 4         |
+# |               |                |
+# - - - - - - - - - - - - - - - - -
+
+new -s my_sess # create new session
+neww -n left # create new window
+split-window -h -t left # create pane 0 (left) and pane 1 (to the right)
+split-window -v # split pane 1 (current pane) in two --> new pane 2 on the bottom
+split-window -v # split pane 2 (current pane) in two --> new pane 3 on the bottom
+select-pane -t 1 # go back to upper right pane
+split-window -v # split pane 1 (current pane) in two --> all pane numbers are shuffled
+
+# additional commands I am actually not using (but they work!)
+#split-window -v 'ls;bash -i' # same as above, but ls is executed in window
+#select-pane -t 4 # go to lower right pane
+#split-window -h # split pane 4 (current pane) in two horizontally

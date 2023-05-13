@@ -1,0 +1,8 @@
+new -s my_sess
+neww -n left
+split-window -h -t left 'cd ~/my-working-dir; npm run first-task' # pane will disappear if I CTRL-C the task
+split-window -v 'cd ~/my-working-dir; npm start; bash -i' # because of "bash -i", pane won't disappear if I CTRL-C the task
+split-window -v # no task running in this new pane
+select-pane -t 1
+split-window -v 'cd ~/my-working-dir; npm run another-task' # pane will disappear if I CTRL-C the task
+# NB: DO NOT set remain-on-exit on ANYWHERE!!!
